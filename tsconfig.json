@@ -15,8 +15,8 @@
     "target": "es2016" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
     "lib": [
       "ESNext"
-    ] /* Specify a set of bundled library declaration files that describe the target runtime environment. */,
-
+    ], /* Specify a set of bundled library declaration files that describe the target runtime environment. */,
+    "experimentalDecorators" : true,
     /* Emit */
     // "declaration": true,                              /* Generate .d.ts files from TypeScript and JavaScript files in your project. */
     // "declarationMap": true,                           /* Create sourcemaps for d.ts files. */
