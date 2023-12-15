@@ -4,9 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": ""
+    "build": "tsc",
+    "dev": "ts-node src/app.ts"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "ts-node": "^10.9.2"
+  }
 }
