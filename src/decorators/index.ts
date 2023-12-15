@@ -1,17 +1,32 @@
-// Requires `experimentalDecorators` enabled
+function first() {
+  console.log("first(): factory evaluated");
+  return function (
+    target: any,
+    propertyKey: string,
+    descriptor: PropertyDescriptor
+  ) {
+    console.log("first(): called target", target);
+  };
+}
 
-@sealed
-class App {
-  greeting: string;
-  constructor(message: string) {
-    this.greeting = message;
-  }
-  greet() {
-    return "Hello, " + this.greeting;
+function second() {
+  console.log("second(): factory evaluated");
+  return function (
+    target: any,
+    propertyKey: string,
+    descriptor: PropertyDescriptor
+  ) {
+    console.log("second(): called target", target);
+  };
+}
+
+class ExampleClass {
+  @first()
+  @second()
+  method() {
+    return 0;
   }
 }
 
-function sealed(constructor: Function) {
-  Object.seal(constructor);
-  Object.seal(constructor.prototype);
-}
+const test = new ExampleClass();
+test.method();
